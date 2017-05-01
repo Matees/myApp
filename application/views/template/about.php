@@ -157,11 +157,11 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="#services">SERVICES</a></li>
-                <li><a href="#portfolio">PORTFOLIO</a></li>
-                <li><a href="#pricing">PRICING</a></li>
-                <li><a href="#contact">CONTACT</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">SERVICES</a></li>
+                <li><a href="#">PORTFOLIO</a></li>
+                <li><a href="#">PRICING</a></li>
+                <li><a href="#">CONTACT</a></li>
             </ul>
         </div>
     </div>
@@ -216,21 +216,21 @@
     <div class="row text-center">
         <div class="col-sm-4">
             <div class="thumbnail">
-                <img src="paris.jpg" alt="Paris">
+                <img src="" alt="Paris">
                 <p><strong>Paris</strong></p>
                 <p>Yes, we built Paris</p>
             </div>
         </div>
         <div class="col-sm-4">
             <div class="thumbnail">
-                <img src="newyork.jpg" alt="New York">
+                <img src="" alt="New York">
                 <p><strong>New York</strong></p>
                 <p>We built New York</p>
             </div>
         </div>
         <div class="col-sm-4">
             <div class="thumbnail">
-                <img src="sanfran.jpg" alt="San Francisco">
+                <img src="" alt="San Francisco">
                 <p><strong>San Francisco</strong></p>
                 <p>Yes, San Fran is ours</p>
             </div>
@@ -395,7 +395,7 @@
     </div>
 </div>
     <footer class="container-fluid text-center">
-        <a href="#myPage" title="To Top">
+        <a href="" title="To Top">
             <span class="glyphicon glyphicon-chevron-up"></span>
         </a>
         <p><a href="https://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p>
