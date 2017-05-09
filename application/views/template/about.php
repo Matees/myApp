@@ -89,10 +89,6 @@
         background-color: #f4511e !important;
         padding: 25px;
         border-bottom: 1px solid transparent;
-        border-top-left-radius: 0px;
-        border-top-right-radius: 0px;
-        border-bottom-left-radius: 0px;
-        border-bottom-right-radius: 0px;
     }
 
     .panel-footer {
@@ -236,6 +232,7 @@
             </div>
         </div>
     </div>
+</div>
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-8">
@@ -400,5 +397,5 @@
         </a>
         <p><a href="https://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p>
     </footer>
-
+</body>>
 </html>
