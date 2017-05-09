@@ -311,9 +311,6 @@
                     <div class="panel-body">
                         <p><strong>100</strong> Lorem</p>
                         <p><strong>50</strong> Ipsum</p>
-                        <p><strong>25</strong> Dolor</p>
-                        <p><strong>10</strong> Sit</p>
-                        <p><strong>Endless</strong> Amet</p>
                     </div>
                     <div class="panel-footer">
                         <h3>$49</h3>
