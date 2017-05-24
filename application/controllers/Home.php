@@ -13,9 +13,10 @@ class Home extends CI_Controller {
 
     public function index()
 	{
+        $data['zakaznik'] = $this->tables_model->getCustomers();
         $this->load->view('template/header');
         $this->load->view('template/navigation');
-        $this->load->view('home');
+        $this->load->view('home', $data);
         $this->load->view('template/footer');
     }
 }

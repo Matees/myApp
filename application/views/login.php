@@ -35,11 +35,11 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="name" class="cols-sm-2 control-label">Your Password</label>
+                    <label for="password" class="cols-sm-2 control-label">Your Password</label>
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                            <?php echo form_input(array('name'=>'password', 'id'=> 'password', 'placeholder'=>'Password', 'class'=>'form-control')); ?>
+                            <?php echo form_input(array('name'=>'password', 'id'=> 'password', 'type'=>'password', 'placeholder'=>'Password', 'class'=>'form-control')); ?>
                         </div>
                     </div>
                 </div>

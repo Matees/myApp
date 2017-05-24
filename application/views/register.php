@@ -59,7 +59,7 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                            <?php echo form_input(array('name'=>'password', 'id'=> 'password', 'placeholder'=>'Password', 'class'=>'form-control')); ?>
+                            <?php echo form_input(array('name'=>'password', 'id'=> 'password', 'type'=>'password', 'placeholder'=>'Password', 'class'=>'form-control')); ?>
                         </div>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
                     <div class="cols-sm-10">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                            <?php echo form_input(array('name'=>'confirm', 'id'=> 'confirm', 'placeholder'=>'Confirm password', 'class'=>'form-control')); ?>
+                            <?php echo form_input(array('name'=>'confirm', 'id'=> 'confirm', 'type'=>'password', 'placeholder'=>'Confirm password', 'class'=>'form-control')); ?>
                         </div>
                     </div>
                 </div>
