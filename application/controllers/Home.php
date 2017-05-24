@@ -19,4 +19,8 @@ class Home extends CI_Controller {
         $this->load->view('home', $data);
         $this->load->view('template/footer');
     }
+
+    public function data(){
+        echo json_encode($this->tables_model->getCustomers());
+    }
 }

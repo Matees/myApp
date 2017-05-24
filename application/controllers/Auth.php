@@ -33,6 +33,7 @@ class Auth extends CI_Controller {
         $this->load->library('form_validation');
         $this->form_validation->set_rules('email', 'Email', 'trim|required');
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
+        $this->form_validation->set_error_delimiters('<p align="center" style="color: #CC0000; font-style: italic; padding-top: 10px">', '</p>');
 
         if($this->form_validation->run())
         {
@@ -59,5 +60,6 @@ class Auth extends CI_Controller {
         print_r($this->session->userdata);
         $this->session->set_userdata(array('FirstName' => '', 'LastName' => '','Email' => '','logged_in' => '','uid' => '','logged in' =>''));
         $this->login();
+        redirect('login');
     }
 }

@@ -1,3 +1,5 @@
+</div>
+</div>
 </body>
 
 <!--   Core JS Files   -->
@@ -19,6 +21,9 @@
 
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
 <script src="<?php echo base_url();?>assets/js/demo.js"></script>
+
+
+
 
 <script type="text/javascript">
     $(document).ready(function(){
