@@ -78,7 +78,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="<?php echo base_url();?>auth/logout">
+                            <a href="<?php echo base_url();?>index.php/auth/logout">
                                 <i class="material-icons">person</i>
                                 <p class="hidden-lg hidden-md">Profile</p>
                             </a>

@@ -1,105 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html >
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Day 001 Login Form</title>
 
 
-    <!-- Website CSS style -->
-    <link href="<?php echo base_url();?>assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:600'>
 
-    <!-- Website Font style -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/css/form.css">
-    <!-- Google Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/css/style.css">
 
-    <title>Registrácia</title>
+
 </head>
+
 <body>
-<div class="container">
-    <div class="row main">
-        <div class="main-login main-center">
-            <form class="" method="post" action="#">
-                <?php
-                echo form_open('auth/register');
-                ?>
-                <div class="form-group">
-                    <label for="name" class="cols-sm-2 control-label">Your First Name</label>
-                    <div class="cols-sm-10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                            <?php echo form_input(array('name'=>'firstname', 'id'=> 'firstname', 'placeholder'=>'First Name', 'class'=>'form-control')); ?>
-                        </div>
-                    </div>
+<div class="login-wrap">
+    <div class="login-html">
+        <input id="tab-1" type="radio" name="tab" class="sign-in" >
+        <input id="tab-2" type="radio" name="tab" class="sign-up" checked><label for="tab-2" class="tab">Sign Up</label>
+        <div class="login-form">
+            <?php echo form_open('auth/register');?>
+            <div class="sign-up-htm">
+                <div class="group">
+                    <label for="user" class="label">First Name</label>
+                    <?php echo form_input(array('name'=>'firstname', 'id'=> 'firstname', 'class'=>'input')); ?>
                 </div>
-
-                <div class="form-group">
-                    <label for="name" class="cols-sm-2 control-label">Your Last Name</label>
-                    <div class="cols-sm-10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                            <?php echo form_input(array('name'=>'lastname', 'id'=> 'lastname', 'placeholder'=>'Last Name', 'class'=>'form-control')); ?>
-                        </div>
-                    </div>
+                <div class="group">
+                    <label for="user" class="label">Last Name</label>
+                    <?php echo form_input(array('name'=>'lastname', 'id'=> 'lastname', 'class'=>'input')); ?>
                 </div>
-
-                <div class="form-group">
-                    <label for="email" class="cols-sm-2 control-label">Your Email</label>
-                    <div class="cols-sm-10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                            <?php echo form_input(array('name'=>'email', 'id'=> 'email', 'placeholder'=>'Email', 'class'=>'form-control')); ?>
-                        </div>
-                    </div>
+                <div class="group">
+                    <label for="pass" class="label">Password</label>
+                    <?php echo form_input(array('name'=>'password', 'id'=> 'password', 'type'=>'password', 'class'=>'input')); ?>
                 </div>
-
-                <div class="form-group">
-                    <label for="password" class="cols-sm-2 control-label">Password</label>
-                    <div class="cols-sm-10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                            <?php echo form_input(array('name'=>'password', 'id'=> 'password', 'type'=>'password', 'placeholder'=>'Password', 'class'=>'form-control')); ?>
-                        </div>
-                    </div>
+                <div class="group">
+                    <label for="pass" class="label">Repeat Password</label>
+                    <?php echo form_input(array('name'=>'confirm', 'id'=> 'confirm', 'type'=>'password', 'class'=>'input')); ?>
                 </div>
-
-                <div class="form-group">
-                    <label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
-                    <div class="cols-sm-10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                            <?php echo form_input(array('name'=>'confirm', 'id'=> 'confirm', 'type'=>'password', 'placeholder'=>'Confirm password', 'class'=>'form-control')); ?>
-                        </div>
-                    </div>
+                <div class="group">
+                    <label for="pass" class="label">Email Address</label>
+                    <?php echo form_input(array('name'=>'email', 'id'=> 'email', 'class'=>'input')); ?>
                 </div>
-
-                <div class="form-group ">
-                    <?php echo form_submit('submit', 'Register',
-                        'style = "background-color: #4CAF50;
-                            border: none;
-                            color: white;
-                            padding: 15px 32px;
-                            text-align: center;
-                            text-decoration: none;
-                            display: inline-block;
-                            font-size: 14px;
-                            border-radius: 4px;"');
-                     echo form_close();
-                    ;?>
+                <div class="group">
+                    <input type="submit" name="submit" class="button" value="register">
                 </div>
-
-            </form>
+                <?php echo form_close();?>
+                <div class="hr"></div>
+            </div>
         </div>
     </div>
-    <?php
-    echo validation_errors();
-    ?>
 </div>
+<?php echo validation_errors();?>
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
+
 </body>
 </html>
