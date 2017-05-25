@@ -13,10 +13,85 @@ class Tables extends CI_Controller {
 
     public function index()
     {
+
+    }
+
+    public function _example_output($output = null)
+    {
         $data['zakaznik'] = $this->tables_model->getCustomers();
         $this->load->view('template/header');
         $this->load->view('template/navigation');
-        $this->load->view('tables', $data);
+        $this->load->view('example.php',(array)$output);
         $this->load->view('template/footer');
+    }
+
+    public function zakaznik()
+    {
+        $crud = new grocery_CRUD();
+
+        $crud->set_table('zakaznik');
+        $output = $crud->render();
+
+        $this->_example_output($output);
+    }
+
+    public function users()
+    {
+        $crud = new grocery_CRUD();
+
+        $crud->set_table('users');
+        $output = $crud->render();
+
+        $this->_example_output($output);
+    }
+
+    public function taxik()
+    {
+        $crud = new grocery_CRUD();
+
+        $crud->set_table('taxik');
+        $output = $crud->render();
+
+        $this->_example_output($output);
+    }
+
+    public function sofer()
+    {
+        $crud = new grocery_CRUD();
+
+        $crud->set_table('sofer');
+        $output = $crud->render();
+
+        $this->_example_output($output);
+    }
+
+    public function smena()
+    {
+        $crud = new grocery_CRUD();
+
+        $crud->set_table('smena');
+        $output = $crud->render();
+
+        $this->_example_output($output);
+    }
+
+    public function jazda()
+    {
+        $crud = new grocery_CRUD();
+
+        $crud->set_table('jazda');
+        $output = $crud->render();
+
+        $this->_example_output($output);
+    }
+
+    public function druh_platby()
+    {
+        $crud = new grocery_CRUD();
+
+        $crud->set_table('druh_platby');
+        $output = $crud->render();
+
+        $this->_example_output($output);
     }
 }
