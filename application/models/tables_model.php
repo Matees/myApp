@@ -7,14 +7,14 @@ class Tables_model extends CI_Model {
         parent::__construct();
     }
 
-    public function getCustomers($id = FALSE){
+    public function getDrivers($id = FALSE){
         if ($id === FALSE)
         {
-            $query = $this->db->get('zakaznik');
+            $query = $this->db->get('sofer');
             return $query->result_array();
         }
 
-        $query = $this->db->get_where('zakaznik', array('ID' => $id));
+        $query = $this->db->get_where('sofer', array('ID' => $id));
         return $query->row-array();
     }
 

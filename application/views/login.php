@@ -19,7 +19,8 @@
         <input id="tab-2" type="radio" name="tab" class="sign-up" ><label for="tab-2" class="tab"></label>
         <div class="login-form">
             <?php echo form_open('auth/login');?>
-            <div class="sign-in-htm">
+            <form action="<?php echo base_url()?>application/controllers/Auth/login" method="post">
+            <form class="sign-in-htm">
                 <div class="group">
                     <label for="user" class="label">Email</label>
                     <?php echo form_input(array('name'=>'email', 'id'=> 'email', 'class'=>'input')); ?>
@@ -31,6 +32,7 @@
                 <div class="group">
                     <input type="submit" name="submit" class="button" value="login">
                 </div>
+            </form>
                 <?php echo form_close();?>
                 <div class="hr"></div>
             </div>

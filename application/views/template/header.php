@@ -9,9 +9,131 @@
     <title>Material Dashboard by Creative Tim</title>
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+        // Load the Visualization API and the corechart package.
+        google.charts.load('current', {'packages':['corechart']});
+
+
+        // Set a callback to run when the Google Visualization API is loaded.
+        google.charts.setOnLoadCallback(drawChart);
+        google.charts.setOnLoadCallback(drawChart2);
+        google.charts.setOnLoadCallback(drawChart3);
+        google.charts.setOnLoadCallback(drawChart4);
+
+        // Callback that creates and populates a data table,
+        // instantiates the pie chart, passes in the data and
+        // draws it.
+        function drawChart() {
+
+         // Create the data table.
+         var data = new google.visualization.DataTable();
+         data.addColumn('string', 'Druh');
+         data.addColumn('number', 'Počet');
+         data.addRows([
+             <?php foreach ($druh_platby as $row) :?>
+         ['<?php echo $row['druh']?>', <?php echo $row['pocet']?>],
+             <?php endforeach; ?>
+         ]);
+
+         // Set chart options
+         var options = {'title':'',
+             backgroundColor: '#0fc484'
+         };
+
+         // Instantiate and draw our chart, passing in some options.
+         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+         chart.draw(data, options);
+        }
+
+        function drawChart2() {
+            var data = google.visualization.arrayToDataTable([
+                ["Meno", "Počet", { role: "style" }],
+                <?php foreach($pocet_jazd as $row) :?>
+                ['<?php echo $row['menop']?>',  <?php echo $row['pocet']?>, 'color: #4286f4'],
+                <?php endforeach;?>
+            ]);
+
+            var view = new google.visualization.DataView(data);
+            view.setColumns([0, 1,
+                { calc: "stringify",
+                    sourceColumn: 1,
+                    type: "string",
+                    role: "annotation" },
+                2]);
+
+            var options = {
+                title: "",
+                bar: {groupWidth: "95%"},
+                backgroundColor: 'orange',
+                legend: { position: "none" }
+            };
+            var chart = new google.visualization.ColumnChart(document.getElementById("chart2"));
+            chart.draw(view, options);
+        }
+
+        function drawChart3() {
+            var data = google.visualization.arrayToDataTable([
+                ["Auto", "Počet", { role: "style" } ],
+                <?php foreach($najazdene as $row) :?>
+                ['<?php echo $row['auto']?>',  <?php echo $row['najazdene']?>, 'color: #4286f4'],
+                <?php endforeach;?>
+            ]);
+
+            var view = new google.visualization.DataView(data);
+            view.setColumns([0, 1,
+                { calc: "stringify",
+                    sourceColumn: 1,
+                    type: "string",
+                    role: "annotation" },
+                2]);
+
+            var options = {
+                title: "",
+                bar: {groupWidth: "95%"},
+                backgroundColor: '#fa6e6e',
+                legend: { position: "none" }
+            };
+            var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+            chart.draw(view, options);
+        }
+
+        function drawChart4() {
+            var data = google.visualization.arrayToDataTable([
+                <?php foreach($pocet_zakaznikov as $row) :?>
+                ['Rok', 'Počet'],
+                ['<?php echo $row['rok']?>',  <?php echo $row['pocet']?>],
+                <?php endforeach;?>
+            ]);
+
+            var options = {
+                title: '',
+                curveType: 'function',
+                legend: { position: 'bottom' }
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('chart3'));
+
+            chart.draw(data, options);
+        }
+    </script>
 
     <style>
+
+        .username{
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-size: 30px;
+        }
         /*!
  * Bootstrap v3.3.5 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -5157,4 +5279,33 @@ Copyright (c) 2015 Daniel Eden
 </head>
 
 <body>
+<div class="wrapper">
+    <div class="sidebar" data-color="purple" data-image="<?php echo base_url()?>assets/img/sidebar-1.jpg">
+        <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+        Tip 2: you can also add an image using data-image tag
+
+        -->
+
+
+        <div class="sidebar-wrapper">
+            <ul class="nav">
+                <li>
+                    <a href="<?php echo base_url();?>index.php/Home">
+                        <i class="material-icons">dashboard</i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>index.php/Tables/zakaznik">
+                        <i class="material-icons">content_paste</i>
+                        <p>Table List</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-panel">
+
 
