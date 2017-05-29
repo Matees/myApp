@@ -68,7 +68,8 @@ class Tables extends CI_Controller {
     {
         $crud = new grocery_CRUD();
 
-        $crud->required_fields('ID');
+        $crud->set_relation('Sofer_ID','Sofer','ID');
+        $crud->set_relation('Taxik_ID','Taxik','ID');
         $crud->set_table('smena');
         $output = $crud->render();
 
@@ -80,7 +81,8 @@ class Tables extends CI_Controller {
         $crud = new grocery_CRUD();
         $crud->required_fields('ID');
         $crud->set_relation('Zakaznik_ID','Zakaznik','ID');
-        $crud->set_relation('Druh_Platby_ID','Druh_platby','ID');
+        $crud->set_relation('Druh_platby_ID','Druh_platby','ID');
+        $crud->set_relation('smena_ID','Smena','ID');
         $crud->set_table('jazda');
         $output = $crud->render();
 

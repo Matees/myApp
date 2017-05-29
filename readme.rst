@@ -68,3 +68,19 @@ Acknowledgement
 
 The CodeIgniter team would like to thank EllisLab, all the
 contributors to the CodeIgniter project and you, the CodeIgniter user.
+
+Aplikácia obsahuje 2 stránky:
+
+1. Dashboard - vizuálizácia dát v tabu¾kách v podobe rôznych grafov a tabu¾ka vodièov.
+
+2. Table List - všetky tabu¾ky a práca s nimi. Operácie CRUD, napojenie cudzích k¾úèov a 
+všetky operácie z poiadaviek.
+
+Takisto je spravnı systém prihlaovania, odhlasovania a registrácie pouívate¾a.
+
+Prihlasuje sa prostredníctvom emailu a hesla.
+
+Prihlasovacie údaje môu by:
+
+email: matej@snovak.sk	
+heslo: 123456

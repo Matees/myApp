@@ -70,8 +70,8 @@
                     <div class="col-lg-6 col-md-12">
                         <div class="card">
                             <div class="card-header" data-background-color="orange">
-                                <h4 class="title">Drivers Stats</h4>
-                                <p class="category">All you wanna know about our drivers</p>
+                                <h4 class="title">Informácie o šoféroch</h4>
+
                             </div>
                             <div class="card-content table-responsive">
                                 <table class="table table-hover">

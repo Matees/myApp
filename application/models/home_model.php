@@ -13,12 +13,12 @@ class Home_model extends CI_Model{
     }
 
     function getPocetJazd(){
-        $query = $this->db->query('SELECT CONCAT(s.meno, \' \', s.priezvisko) AS menop, COUNT(j.ID) AS pocet FROM sofer s INNER JOIN smena m ON s.ID = m.Sofer_ID INNER JOIN jazda j ON m.Sofer_ID = j.Smena_Sofer_ID GROUP by menop');
+        $query = $this->db->query('SELECT CONCAT(s.meno, \' \', s.priezvisko) AS menop, COUNT(j.ID) AS pocet FROM sofer s INNER JOIN smena m ON s.ID = m.Sofer_ID INNER JOIN jazda j ON m.ID = j.smena_ID GROUP by menop');
         return $query->result_array();
     }
 
     function getNajazdeneKm(){
-        $query = $this->db->query('SELECT CONCAT(t.znacka, \' \', t.nazov) AS auto, SUM(j.prejdenych_km) AS najazdene FROM jazda j INNER JOIN smena s ON j.Smena_Taxik_ID = s.Taxik_ID INNER JOIN taxik t ON s.Taxik_ID = t.ID GROUP BY t.znacka, t.nazov');
+        $query = $this->db->query('SELECT CONCAT(t.znacka, \' \', t.nazov) AS auto, SUM(j.prejdenych_km) AS najazdene FROM jazda j INNER JOIN smena s ON j.smena_ID = s.ID INNER JOIN taxik t ON s.Taxik_ID = t.ID GROUP BY t.znacka, t.nazov');
         return $query->result_array();
     }
 

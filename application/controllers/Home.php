@@ -5,15 +5,15 @@ class Home extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        /*if (!$this->session->userdata('logged_in'))
+        if (!$this->session->userdata('logged_in'))
         {
             redirect('login');
-        }*/
+        }
     }
 
     public function index()
 	{
-        echo json_encode($this->input->post("email"));
+        //echo json_encode($this->session->userdata());
         $data['sofer'] = $this->tables_model->getDrivers();
 
         $data['druh_platby'] = $this->home_model->getDruhPlatby();

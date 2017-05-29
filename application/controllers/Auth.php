@@ -21,10 +21,8 @@ class Auth extends CI_Controller {
         $this->form_validation->set_error_delimiters('<p align="center" style="color: #CC0000; font-style: italic; padding-top: 10px">', '</p>');
 
         if($this->form_validation->run() && $this->auth_model->register()){
-            $data = $this->auth_model->getUserData($_POST['email']);
-            $this->session->set_userdata('userdata',$data);
 
-            redirect('home');
+            redirect('login');
         }else{
 
         }
@@ -33,22 +31,28 @@ class Auth extends CI_Controller {
 
     function login()
     {
-        //print_r($_POST['email']);
-        echo json_encode($this->auth_model->check());
+        //print_r($this->session->userdata());
+        //echo $this->session->userdata('userdata', 'FirstName');
+        //echo json_encode($this->auth_model->check());
+
         //echo json_encode($this->input->get_post('password'));
         //echo json_encode($_POST['password']);
+        $this->load->library('form_validation');
         $this->form_validation->set_rules('email', 'Email', 'trim|required');
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
         $this->form_validation->set_error_delimiters('<p align="center" style="color: #CC0000; font-style: italic; padding-top: 10px">', '</p>');
 
         if($this->form_validation->run())
         {
+            //echo 'OK val';
             if($this->auth_model->check())
             {
-                $data = $this->auth_model->getUserData($this->input->post('email'));
+                //echo 'OK';
+                //echo $_POST['email'];
+                $data = $this->auth_model->getUserData($_POST['email']);
                 $data['logged_in'] = true;
-
-                $this->session->set_userdata('userdata',$data);
+                //echo json_encode($data);
+                $this->session->set_userdata($data);
 
                 redirect('home');
             }else
@@ -57,7 +61,7 @@ class Auth extends CI_Controller {
             }
         }
         else{
-
+            //echo 'val null';
         }
         $this->load->view('login');
     }
@@ -67,4 +71,8 @@ class Auth extends CI_Controller {
         $this->login();
         //redirect('login');
     }
+
+    /*function remove(){
+        $this->session->unset_userdata('ID','LastName', 'Email', 'Password', 'logged_in' );
+    }*/
 }

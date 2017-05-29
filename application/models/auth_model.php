@@ -20,8 +20,8 @@ class Auth_model extends CI_Model{
 
     function check()
     {
-        $select =  $this->db->where('Email', $this->input->post('email'))->where('Password', $this->input->post('password'))->get('users');
-        if ($select->num_rows()>0)return true;
+        $select =  $this->db->where('Email', $_POST['email'])->where('Password', $_POST['password'])->get('users');
+        if ($select->num_rows()>0)return $select->num_rows();
         else return false;
     }
 
@@ -29,7 +29,7 @@ class Auth_model extends CI_Model{
     {
         $select = $this->db->where('Email', $email)->limit(1)->get('users');
 
-        if($select->num_rows() > 0) return true;
+        if($select->num_rows() > 0) return $select->row_array();
         else return false;
     }
 }
