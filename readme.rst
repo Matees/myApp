@@ -80,7 +80,9 @@ Takisto je spravnı systém prihlaovania, odhlasovania a registrácie pouívate¾a.
 
 Prihlasuje sa prostredníctvom emailu a hesla.
 
-Prihlasovacie údaje môu by:
+Prihlasovacie údaje ako admin sú:
 
 email: matej@snovak.sk	
 heslo: 123456
+
+Admin môe vıkonáva jednotlivé operácie na tabu¾kami a tım pádom urèova ïalších adminov.

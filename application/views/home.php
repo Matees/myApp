@@ -1,5 +1,15 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
+        <ul class="nav navbar-nav navbar-left">
+            <li><a href="<?php echo base_url();?>index.php/Home"><span> Dashboard</span></a></li>
+            <li><a href='<?php echo site_url('tables/zakaznik')?>'>Zákazníci</a></li>
+            <li><a href='<?php echo site_url('tables/users')?>'>Používatelia</a></li>
+            <li><a href='<?php echo site_url('tables/taxik')?>'>Taxíky</a></li>
+            <li><a href='<?php echo site_url('tables/sofer')?>'>Šoféri</a></li>
+            <li><a href='<?php echo site_url('tables/smena')?>'>Smeny</a></li>
+            <li><a href='<?php echo site_url('tables/jazda')?>'>Jazdy</a></li>
+            <li><a href='<?php echo site_url('tables/druh_platby')?>'>Druh platby</a></li>
+        </ul>
         <ul class="nav navbar-nav navbar-right">
             <li><a>
                 <?php
@@ -61,9 +71,14 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-12">
                         <div class="card card-nav-tabs">
+                            <div class="card-header" data-background-color="blue">
+                                <h4 class="title">Počet jázd v jednotlivých rokoch</h4>
                             <div class="card-content">
-                                <div id="chart3" style="height: 500px"></div>
+
+                                <div id="curve_chart" style="height: 500px"></div>
+
                             </div>
+                        </div>
                         </div>
                     </div>
 
@@ -102,5 +117,7 @@
                 </div>
             </div>
         </div>
+
+
 
 

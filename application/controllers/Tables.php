@@ -18,16 +18,22 @@ class Tables extends CI_Controller {
 
     public function _example_output($output = null)
     {
-        $this->load->view('template/header');
+        //$this->load->view('template/header');
         $this->load->view('example.php',(array)$output);
         //$this->load->view('template/footer');
     }
 
     public function zakaznik()
     {
+        //print_r($this->session->userdata('Email'));
         $crud = new grocery_CRUD();
         $crud->required_fields('ID');
         $crud->set_table('zakaznik');
+        if (!$this->tables_model->isAdmin()){
+        $crud->unset_add();
+        $crud->unset_edit();
+        $crud->unset_delete();
+        }
         $output = $crud->render();
 
         $this->_example_output($output);
@@ -38,6 +44,11 @@ class Tables extends CI_Controller {
         $crud = new grocery_CRUD();
         $crud->required_fields('ID');
         $crud->set_table('users');
+        if (!$this->tables_model->isAdmin()){
+            $crud->unset_add();
+            $crud->unset_edit();
+            $crud->unset_delete();
+        }
         $output = $crud->render();
 
         $this->_example_output($output);
@@ -48,6 +59,11 @@ class Tables extends CI_Controller {
         $crud = new grocery_CRUD();
         $crud->required_fields('ID');
         $crud->set_table('taxik');
+        if (!$this->tables_model->isAdmin()){
+            $crud->unset_add();
+            $crud->unset_edit();
+            $crud->unset_delete();
+        }
         $output = $crud->render();
 
         $this->_example_output($output);
@@ -59,6 +75,11 @@ class Tables extends CI_Controller {
 
         $crud->required_fields('ID');
         $crud->set_table('sofer');
+        if (!$this->tables_model->isAdmin()){
+            $crud->unset_add();
+            $crud->unset_edit();
+            $crud->unset_delete();
+        }
         $output = $crud->render();
 
         $this->_example_output($output);
@@ -71,6 +92,11 @@ class Tables extends CI_Controller {
         $crud->set_relation('Sofer_ID','Sofer','ID');
         $crud->set_relation('Taxik_ID','Taxik','ID');
         $crud->set_table('smena');
+        if (!$this->tables_model->isAdmin()){
+            $crud->unset_add();
+            $crud->unset_edit();
+            $crud->unset_delete();
+        }
         $output = $crud->render();
 
         $this->_example_output($output);
@@ -84,6 +110,11 @@ class Tables extends CI_Controller {
         $crud->set_relation('Druh_platby_ID','Druh_platby','ID');
         $crud->set_relation('smena_ID','Smena','ID');
         $crud->set_table('jazda');
+        if (!$this->tables_model->isAdmin()){
+            $crud->unset_add();
+            $crud->unset_edit();
+            $crud->unset_delete();
+        }
         $output = $crud->render();
 
         $this->_example_output($output);
@@ -94,6 +125,11 @@ class Tables extends CI_Controller {
         $crud = new grocery_CRUD();
         $crud->required_fields('ID');
         $crud->set_table('druh_platby');
+        if (!$this->tables_model->isAdmin()){
+            $crud->unset_add();
+            $crud->unset_edit();
+            $crud->unset_delete();
+        }
         $output = $crud->render();
 
         $this->_example_output($output);

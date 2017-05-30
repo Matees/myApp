@@ -18,6 +18,12 @@ class Tables_model extends CI_Model {
         return $query->row-array();
     }
 
+    public function isAdmin(){
+        $select =  $this->db->where('Email', $this->session->userdata('Email'))->where('Password', $this->session->userdata('Password'))->where('Admin', '1')->get('users');
+        if ($select->num_rows()>0)return $select->num_rows();
+        else return false;
+    }
+
     public function setCustomers($id = 0)
     {
         foreach ($_POST as $key => $value) {

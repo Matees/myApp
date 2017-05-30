@@ -18,7 +18,7 @@ class Home_model extends CI_Model{
     }
 
     function getNajazdeneKm(){
-        $query = $this->db->query('SELECT CONCAT(t.znacka, \' \', t.nazov) AS auto, SUM(j.prejdenych_km) AS najazdene FROM jazda j INNER JOIN smena s ON j.smena_ID = s.ID INNER JOIN taxik t ON s.Taxik_ID = t.ID GROUP BY t.znacka, t.nazov');
+        $query = $this->db->query('SELECT CONCAT(t.nazov, \' \', t.SPZ) AS auto, j.prejdenych_km AS najazdene FROM jazda j INNER JOIN smena s ON j.smena_ID = s.ID INNER JOIN taxik t ON s.Taxik_ID = t.ID');
         return $query->result_array();
     }
 
