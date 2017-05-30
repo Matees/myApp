@@ -1,3 +1,4 @@
+<div class="container">
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <ul class="nav navbar-nav navbar-left">
@@ -21,103 +22,15 @@
         </ul>
     </div>
 </nav>
-        <div class="content">
-            <div class="container-fluid">
-
-
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-header card-chart" data-background-color="green">
-
-                                <div class="ct-chart" id="dailySalesChart"></div>
-
-                            <div id="chart_div">
-
-                            </div>
-
-                            </div>
-                            <div class="card-content">
-                                <h4 class="title">Podiel druhov platenia zákazníkov z Nitry</h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-header card-chart" data-background-color="orange">
-                                <div id="chart2"></div>
-                                <div class="ct-chart" id="emailsSubscriptionChart"></div>
-                            </div>
-                            <div class="card-content">
-                                <h4 class="title">Počet jázd jednotlivých vodičov</h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-header card-chart" data-background-color="red">
-                                <div class="ct-chart" id="completedTasksChart"></div>
-                                <div id="columnchart_values"></div>
-                            </div>
-                            <div class="card-content">
-                                <h4 class="title">Počet najazdených km na jednotlivých autách</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-6 col-md-12">
-                        <div class="card card-nav-tabs">
-                            <div class="card-header" data-background-color="blue">
-                                <h4 class="title">Počet jázd v jednotlivých rokoch</h4>
-                            <div class="card-content">
-
-                                <div id="curve_chart" style="height: 500px"></div>
-
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-12">
-                        <div class="card">
-                            <div class="card-header" data-background-color="orange">
-                                <h4 class="title">Informácie o šoféroch</h4>
-
-                            </div>
-                            <div class="card-content table-responsive">
-                                <table class="table table-hover">
-                                    <thead class="text-warning">
-                                    <th>ID</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Number of Driver License</th>
-                                    <th>Expiration Date</th>
-                                    <th>Contact</th>
-                                    </thead>
-                                    <tbody>
-                                    <?php foreach ($sofer as $sofer_item): ?>
-                                    <tr>
-                                        <td><?php echo $sofer_item['ID'];?></td>
-                                        <td><?php echo $sofer_item['meno'];?></td>
-                                        <td><?php echo $sofer_item['priezvisko'];?></td>
-                                        <td><?php echo $sofer_item['cislo_vodicaka'];?></td>
-                                        <td><?php echo $sofer_item['datum_platnosti'];?></td>
-                                        <td><?php echo $sofer_item['kontakt'];?></td>
-                                        <?php endforeach; ?>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+    <h2 align="center">Podiel platenia kartou a hotovosťou zákazníkov z Nitry</h2>
+    <div align="center" id="chart_div"></div>
+    <h2 align="center">Počet jázd jednotlivých vodičov</h2>
+    <div align="center" id="chart2"></div>
+    <h2 align="center">Počet najazdených km na jednotlivých autách</h2>
+    <div align="center" id="columnchart_values"></div>
+    <h2 align="center">Počet jázd v jednotlivých rokoch</h2>
+    <div align="center" id="curve_chart"></div>
+</div>
 
 
 

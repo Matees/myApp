@@ -89,8 +89,8 @@ class Tables extends CI_Controller {
     {
         $crud = new grocery_CRUD();
 
-        $crud->set_relation('Sofer_ID','Sofer','ID');
-        $crud->set_relation('Taxik_ID','Taxik','ID');
+        $crud->set_relation('Sofer_ID','sofer','ID');
+        $crud->set_relation('Taxik_ID','taxik','ID');
         $crud->set_table('smena');
         if (!$this->tables_model->isAdmin()){
             $crud->unset_add();
@@ -106,9 +106,9 @@ class Tables extends CI_Controller {
     {
         $crud = new grocery_CRUD();
         $crud->required_fields('ID');
-        $crud->set_relation('Zakaznik_ID','Zakaznik','ID');
-        $crud->set_relation('Druh_platby_ID','Druh_platby','ID');
-        $crud->set_relation('smena_ID','Smena','ID');
+        $crud->set_relation('Zakaznik_ID','zakaznik','ID');
+        $crud->set_relation('Druh_platby_ID','druh_platby','ID');
+        $crud->set_relation('smena_ID','smena','ID');
         $crud->set_table('jazda');
         if (!$this->tables_model->isAdmin()){
             $crud->unset_add();

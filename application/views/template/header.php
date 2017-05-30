@@ -6,17 +6,19 @@
     <link rel="icon" type="image/png" href="<?php echo base_url();?>assets/img/favicon.png" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <title>Material Dashboard by Creative Tim</title>
+    <title>Dashboard</title>
 
     <link rel="canonical" href="https://www.creative-tim.com/product/material-dashboard"/>
 
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -50,9 +52,8 @@
 
          // Set chart options
          var options = {'title':'',
-             'width':575,
-             'height':300,
-             backgroundColor: '#0fc484'
+             'height':400,
+             backgroundColor: '#49A44D'
          };
 
          // Instantiate and draw our chart, passing in some options.
@@ -79,9 +80,8 @@
             var options = {
                 title: "",
                 bar: {groupWidth: "95%"},
-                width: 575,
-                height: 300,
-                backgroundColor: 'orange',
+                height: 400,
+                backgroundColor: '#FC9107',
                 legend: { position: "none" }
             };
             var chart = new google.visualization.ColumnChart(document.getElementById("chart2"));
@@ -106,10 +106,9 @@
 
             var options = {
                 title: "",
-                width: 575,
-                height: 300,
+                height: 400,
                 bar: {groupWidth: "95%"},
-                backgroundColor: '#fa6e6e',
+                backgroundColor: '#E73E3A',
                 legend: { position: "none" }
             };
             var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
@@ -129,6 +128,8 @@
 
             var options = {
                 title: '',
+                height: 400,
+                backgroundColor: '#8ec6ff',
                 curveType: 'function',
                 legend: { position: 'bottom' }
             };
@@ -140,7 +141,6 @@
     </script>
 
     <style>
-
         .username{
             font-family: 'Open Sans Condensed', sans-serif;
             font-size: 30px;
@@ -5304,7 +5304,7 @@ Copyright (c) 2015 Daniel Eden
 </head>
 
 <body>
-<div class="wrapper">
+
 
 
 
