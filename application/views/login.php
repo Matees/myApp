@@ -35,6 +35,7 @@
             </form>
                 <?php echo form_close();?>
                 <div class="hr"></div>
+                <a href="<?php echo base_url() ?>index.php/auth/register">Registrácia</a>
             </div>
         </div>
     </div>

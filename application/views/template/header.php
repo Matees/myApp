@@ -120,23 +120,29 @@
 
         function drawChart4() {
             var data = google.visualization.arrayToDataTable([
+                ["Rok", "Počet", { role: "style" } ],
                 <?php foreach($pocet_zakaznikov as $row) :?>
-                ['Rok', 'Počet'],
-                ['<?php echo $row['rok']?>',  <?php echo $row['pocet']?>],
+                ['<?php echo $row['rok']?>',  <?php echo $row['pocet']?>, 'color: blue'],
                 <?php endforeach;?>
             ]);
 
+            var view = new google.visualization.DataView(data);
+            view.setColumns([0, 1,
+                { calc: "stringify",
+                    sourceColumn: 1,
+                    type: "string",
+                    role: "annotation" },
+                2]);
+
             var options = {
-                title: '',
+                title: "",
                 height: 400,
-                backgroundColor: '#8ec6ff',
-                curveType: 'function',
-                legend: { position: 'bottom' }
+                bar: {groupWidth: "95%"},
+                backgroundColor: '#42d4fc',
+                legend: { position: "none" }
             };
-
-            var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-
-            chart.draw(data, options);
+            var chart = new google.visualization.LineChart(document.getElementById("curve_chart"));
+            chart.draw(view, options);
         }
     </script>
 
